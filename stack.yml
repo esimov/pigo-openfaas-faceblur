@@ -11,3 +11,5 @@ functions:
       input_mode: "url"
       output_mode: "image"
       content_type: "image/jpeg"
+    labels:
+      com.openfaas.scale.zero: "false"
