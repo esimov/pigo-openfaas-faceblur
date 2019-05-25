@@ -1,0 +1,12 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  pigo-faceblur:
+    lang: go
+    handler: ./pigo-openfaas-faceblur
+    image: esimov/pigo-openfaas-faceblur:0.1
+    environment:
+      input_mode: "url"
+      output_mode: "image"
