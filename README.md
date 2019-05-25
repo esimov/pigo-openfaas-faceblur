@@ -31,8 +31,6 @@ After deploying the OpenFaaS function `pigo-faceblur` will show up in the functi
 <img src="https://user-images.githubusercontent.com/883386/58369719-0791b900-7f07-11e9-9914-52391da1f75b.jpg" title="OpenFaaS faceblur"/>
 </p>
 
-Sample image: https://user-images.githubusercontent.com/883386/53553708-ebb88a00-3b46-11e9-9ea8-73c6b7f9dfa1.jpg
-
 ## License
 
 Copyright © 2019 Endre Simo
