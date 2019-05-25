@@ -10,3 +10,4 @@ functions:
     environment:
       input_mode: "url"
       output_mode: "image"
+      content_type: "image/jpeg"
