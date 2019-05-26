@@ -36,3 +36,4 @@ After deploying the OpenFaaS function `pigo-faceblur` will show up in the functi
 Copyright © 2019 Endre Simo
 
 This project is under the MIT License. See the LICENSE file for the full license text.
+
