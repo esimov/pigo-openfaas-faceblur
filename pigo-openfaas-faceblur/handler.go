@@ -32,6 +32,7 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
+	"math"
 	"net/http"
 	"net/url"
 	"os"
@@ -148,6 +149,7 @@ func Handle(req []byte) string {
 	return string(j)
 }
 
+// SubImager is a wrapper implementing the SubImage method from the image package.
 type SubImager interface {
 	SubImage(r image.Rectangle) image.Image
 }
@@ -235,7 +237,10 @@ func (fd *FaceDetector) DrawFaces(srcImage []byte, faces []pigo.Detection) ([]im
 			rects = append(rects, rect)
 
 			subImg := img.(SubImager).SubImage(rect)
-			blur := stackblur.Process(subImg, 10)
+			dim := subImg.Bounds().Max.X - subImg.Bounds().Min.X
+			sf := int(round(float64(dim) * 0.1))
+
+			blur := stackblur.Process(subImg, uint32(sf))
 
 			x, y := face.Col-face.Scale/2, face.Row-face.Scale/2
 			dc.DrawImage(blur, x, y)
@@ -255,4 +260,9 @@ func (fd *FaceDetector) DrawFaces(srcImage []byte, faces []pigo.Detection) ([]im
 
 	rf, err := ioutil.ReadFile(filename)
 	return rects, rf, err
+}
+
+// round returns the nearest integer.
+func round(f float64) float64 {
+	return math.Floor(f + .5)
 }
