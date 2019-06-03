@@ -1,6 +1,6 @@
-# OpenFaaS faceblur function
+# OpenFaaS Faceblur Function
 
-This is an OpenFaaS faceblur function using the Pigo face detection library.
+This is an OpenFaaS function to blur the detected faces using the Pigo face detection library.
 
 ### Usage
 To run the function locally you have to make sure OpenFaaS is up and running. Read the official documentation for more help. https://docs.openfaas.com/
